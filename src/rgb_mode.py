@@ -2,7 +2,6 @@
 
 import sys
 from PIL import Image
-import numpy as np
 from scipy import stats
 
 def get_rgb_value(image):
@@ -15,10 +14,10 @@ def get_rgb_value(image):
 
     for i in range(x_length):
         for j in range(y_length):
-            htmlColor = "#%02X%02X%02X" % (image.getpixel((i, j))[0],
-                                           image.getpixel((i, j))[1],
-                                           image.getpixel((i, j))[2])
-            pixels.append(htmlColor)
+            html_color = "#%02X%02X%02X" % (image.getpixel((i, j))[0],
+                                            image.getpixel((i, j))[1],
+                                            image.getpixel((i, j))[2])
+            pixels.append(html_color)
 
     print(stats.mode(pixels)[0][0])
     return stats.mode(pixels)[0][0]
